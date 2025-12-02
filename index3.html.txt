@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistic Scripter Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #111;
+            color: white;
+        }
+        .hero {
+            background: linear-gradient(to right, #FFB800, #FF4D00);
+            padding: 100px 40px;
+            text-align: left;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hero img {
+            max-width: 450px;
+            height: auto;
+            border-radius: 12px;
+        }
+        .hero h1 {
+            font-size: 60px;
+            margin: 0;
+        }
+        .section {
+            padding: 60px 40px;
+            text-align: center;
+        }
+        .project-card {
+            background: #1b1b1b;
+            border-radius: 14px;
+            padding: 30px;
+            max-width: 1000px;
+            margin: 0 auto 40px auto;
+        }
+        .yt-video {
+            width: 100%;
+            height: 480px;
+            border-radius: 14px;
+        }
+        ul {
+            text-align: left;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .btn {
+            background: #FF4D00;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            margin-top: 20px;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background: #ff6d26;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div>
+            <h1>Artistic Scripter</h1>
+            <p>Professional Roblox Developer & Systems Programmer</p>
+            <a class="btn" id="copyBtn">📩 Hire Me on Discord</a>
+        </div>
+        <img src="Edited Web Shumbnail.png" alt="Portfolio Banner">
+    </div>
+
+    <div class="section">
+        <h2>Featured Project</h2>
+        <div class="project-card">
+            <h2>Advanced Movement System</h2>
+            <p>The Ultimate Movement System For Immersive Roblox Experiences</p>
+
+            <iframe class="yt-video"
+                src="https://www.youtube.com/embed/shrYt7GvRHc"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+
+            <ul>
+        <li>🔥 Custom animations & realistic character control</li>
+      	<li>🔥 Sprint, Dash, Roll & enhanced jump mechanics</li>
+     	<li>🔥 Shift-Lock and movement customization</li>
+      	<li>🔥 Material-based footsteps + dynamic VFX/SFX</li>
+	<li>🔥 Camera Sway and Camera bobbing for Realism</li>
+      	<li>🔥 Integrated anti-cheat for fairness</li>
+            </ul>
+        </div>
+    </div>
+
+<script>
+document.getElementById("copyBtn").onclick = function () {
+    navigator.clipboard.writeText("tastyrasmalai_08183");
+    alert("Discord copied: tastyrasmalai_08183");
+}
+</script>
+
+</body>
+</html>
