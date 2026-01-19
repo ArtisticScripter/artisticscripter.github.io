@@ -22,55 +22,26 @@
             color: #fff;
         }
 
+        .hero img {
+            max-width: 450px;
+            border-radius: 12px;
+            animation: floatSlow 5.5s ease-in-out infinite;
+        }
+
+        .hero-content {
+            animation: floatSlow 4.5s ease-in-out infinite;
+        }
+
         .hero h1 {
             font-size: 60px;
             margin: 0;
+            animation: floatFast 4s ease-in-out infinite;
         }
 
         .hero p {
             font-size: 22px;
             margin: 10px 0 20px 0;
-        }
-
-        .hero img {
-            max-width: 450px;
-            border-radius: 12px;
-        }
-
-        .section {
-            padding: 60px 40px;
-            text-align: center;
-        }
-
-        .project-card {
-            background: #1b1b1b;
-            padding: 30px;
-            border-radius: 14px;
-            max-width: 900px;
-            margin: 40px auto;
-        }
-
-        .yt-video {
-            width: 100%;
-            max-width: 900px;
-            height: 480px;
-            border-radius: 14px;
-            border: none;
-            display: block;
-            margin: 20px auto;
-        }
-
-        ul {
-            list-style-position: inside;
-            font-size: 1.2rem;
-            margin: 25px auto;
-            max-width: 750px;
-            padding-left: 0;
-            text-align: left;
-        }
-
-        li {
-            margin: 12px 0;
+            animation: floatSlow 5s ease-in-out infinite;
         }
 
         .btn {
@@ -84,6 +55,7 @@
             transition: 0.2s ease-in-out;
             user-select: none;
             display: inline-block;
+            animation: floatFast 4.8s ease-in-out infinite;
         }
 
         .btn:hover {
@@ -91,13 +63,24 @@
             transform: scale(1.05);
         }
 
+        @keyframes floatSlow {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes floatFast {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-4px); }
+            100% { transform: translateY(0px); }
+        }
     </style>
 </head>
 
 <body>
 
     <div class="hero">
-        <div>
+        <div class="hero-content">
             <h1>Artistic Scripter</h1>
             <p>Professional Roblox Developer & Systems Programmer</p>
             <a class="btn" id="copyBtn">📩 Hire Me on Discord</a>
@@ -105,6 +88,7 @@
 
         <img src="Edited Web Shumbnail.png" alt="Portfolio Banner">
     </div>
+
 
     <div class="section">
         <h2>Featured Projects</h2>
@@ -239,7 +223,6 @@
 
 </body>
 </html>
-
 
 
 
