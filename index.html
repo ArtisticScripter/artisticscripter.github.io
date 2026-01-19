@@ -22,26 +22,57 @@
             color: #fff;
         }
 
-        .hero img {
-            max-width: 450px;
-            border-radius: 12px;
-            animation: floatSlow 5.5s ease-in-out infinite;
-        }
-
-        .hero-content {
-            animation: floatSlow 4.5s ease-in-out infinite;
-        }
-
+        /* ONLY animation added */
         .hero h1 {
             font-size: 60px;
             margin: 0;
-            animation: floatFast 4s ease-in-out infinite;
+            animation: floatTitle 4s ease-in-out infinite;
         }
 
         .hero p {
             font-size: 22px;
             margin: 10px 0 20px 0;
-            animation: floatSlow 5s ease-in-out infinite;
+        }
+
+        .hero img {
+            max-width: 450px;
+            border-radius: 12px;
+        }
+
+        .section {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .project-card {
+            background: #1b1b1b;
+            padding: 30px;
+            border-radius: 14px;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .yt-video {
+            width: 100%;
+            max-width: 900px;
+            height: 480px;
+            border-radius: 14px;
+            border: none;
+            display: block;
+            margin: 20px auto;
+        }
+
+        ul {
+            list-style-position: inside;
+            font-size: 1.2rem;
+            margin: 25px auto;
+            max-width: 750px;
+            padding-left: 0;
+            text-align: left;
+        }
+
+        li {
+            margin: 12px 0;
         }
 
         .btn {
@@ -55,7 +86,6 @@
             transition: 0.2s ease-in-out;
             user-select: none;
             display: inline-block;
-            animation: floatFast 4.8s ease-in-out infinite;
         }
 
         .btn:hover {
@@ -63,15 +93,10 @@
             transform: scale(1.05);
         }
 
-        @keyframes floatSlow {
+        /* SIMPLE FLOAT ANIMATION */
+        @keyframes floatTitle {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes floatFast {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-4px); }
+            50% { transform: translateY(-5px); }
             100% { transform: translateY(0px); }
         }
     </style>
@@ -80,7 +105,7 @@
 <body>
 
     <div class="hero">
-        <div class="hero-content">
+        <div>
             <h1>Artistic Scripter</h1>
             <p>Professional Roblox Developer & Systems Programmer</p>
             <a class="btn" id="copyBtn">📩 Hire Me on Discord</a>
@@ -89,8 +114,20 @@
         <img src="Edited Web Shumbnail.png" alt="Portfolio Banner">
     </div>
 
-
     <div class="section">
+
+        <!-- BIO PARAGRAPH (NEW, STATIC) -->
+        <p style="
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            font-size: 20px;
+            line-height: 1.6;
+            opacity: 0.9;
+        ">
+            I'm a full stack scripter with 2 years of experience and know everything from
+            datastores, movement systems, guns, vehicles, to complex modular systems and workflows.
+        </p>
+
         <h2>Featured Projects</h2>
 
         <!-- PROJECT 0 / FIRST PROJECT -->
@@ -113,7 +150,6 @@
             </ul>
         </div>
 
-        
         <!-- PROJECT 1 -->
         <div class="project-card">
             <h2>Advanced Movement System</h2>
@@ -164,19 +200,19 @@
             <p>A Complete Modular Inventory Built for All Game Types</p>
 
             <iframe class="yt-video"
-                 src="https://www.youtube.com/embed/0XVhsqOUasI"
-                 title="YouTube video player"
-                 allowfullscreen>
-         </iframe>
+                src="https://www.youtube.com/embed/0XVhsqOUasI"
+                title="YouTube video player"
+                allowfullscreen>
+            </iframe>
 
             <ul>
                 <li>🔥 Drag and Drop Inventory Items</li>
                 <li>🔥 Advanced UIGridLayout for Perfect Auto-Sorting</li>
                 <li>🔥 Smooth Scrollable Inventory Window</li>
                 <li>🔥 PickUp, Drop, Equip — All Fully Functional</li>
-                <li>🔥 Multiple Categories (Weapons / Items / Materials etc.)</li>
-                <li>🔥 Multiple Rarities (Common → Legendary Color System)</li>
-                <li>🔥 Clean Custom Hover Animations for Each Item</li>
+                <li>🔥 Multiple Categories</li>
+                <li>🔥 Multiple Rarities</li>
+                <li>🔥 Custom Hover Animations</li>
             </ul>
         </div>
 
@@ -190,39 +226,26 @@
                 title="YouTube video player"
                 allowfullscreen>
             </iframe>
-        
+
             <ul>
                 <li>🔥 Modular NPC Dialogue System</li>
                 <li>🔥 Real-Time Quest Tracking</li>
-                <li>🔥 Reward System (Items / Currency / XP)</li>
+                <li>🔥 Reward System</li>
                 <li>🔥 And Much Much More</li>
             </ul>
         </div>
 
-        
-        <!-- MORE COMING SOON -->
-        <h1 style="
-            text-align:center;
-            font-size:50px;
-            margin-top:40px;
-            margin-bottom:20px;
-        ">🔥 More Coming Soon...</h1>
+        <h1 style="text-align:center; font-size:50px; margin-top:40px;">🔥 More Coming Soon...</h1>
 
     </div>
 
     <script>
         document.getElementById("copyBtn").addEventListener("click", function () {
             navigator.clipboard.writeText("tastyrasmalai_08183");
-
-            // Attempt to open Discord app
             window.location.href = "discord://";
-
             alert("Discord Copied! Open Discord and paste to DM: tastyrasmalai_08183");
         });
     </script>
 
 </body>
 </html>
-
-
-
