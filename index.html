@@ -1,260 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artistic Scripter Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #111;
-            color: white;
-        }
+<title>Artistic Scripter</title>
 
-        .hero {
-            background: linear-gradient(to right, #FFB800, #FF4D00);
-            padding: 100px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #fff;
-        }
+<style>
 
-        /* ONLY animation added */
-        .hero h1 {
-            font-size: 60px;
-            margin: 0;
-            animation: floatTitle 4s ease-in-out infinite;
-        }
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#254a3c;
+color:white;
+}
 
-        .hero p {
-            font-size: 22px;
-            margin: 10px 0 20px 0;
-        }
+/* HERO */
 
-        .hero img {
-            max-width: 450px;
-            border-radius: 12px;
-        }
+.hero{
+background:linear-gradient(120deg,#2fa47a,#1a5e4a);
+min-height:420px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+position:relative;
+text-align:center;
+padding:40px;
+}
 
-        .section {
-            padding: 60px 40px;
-            text-align: center;
-        }
+.hero h1{
+font-size:72px;
+margin:0;
+letter-spacing:-1px;
+animation:floatTitle 4s ease-in-out infinite;
+}
 
-        .project-card {
-            background: #1b1b1b;
-            padding: 30px;
-            border-radius: 14px;
-            max-width: 900px;
-            margin: 40px auto;
-        }
+.hero p{
+font-size:22px;
+margin-top:10px;
+color:#ffe8d9;
+}
 
-        .yt-video {
-            width: 100%;
-            max-width: 900px;
-            height: 480px;
-            border-radius: 14px;
-            border: none;
-            display: block;
-            margin: 20px auto;
-        }
+/* FLOAT ANIMATION */
 
-        ul {
-            list-style-position: inside;
-            font-size: 1.2rem;
-            margin: 25px auto;
-            max-width: 750px;
-            padding-left: 0;
-            text-align: left;
-        }
+@keyframes floatTitle{
+0%{transform:translateY(0)}
+50%{transform:translateY(-6px)}
+100%{transform:translateY(0)}
+}
 
-        li {
-            margin: 12px 0;
-        }
+/* HIRE BUTTON */
 
-        .btn {
-            background: #FF4D00;
-            padding: 15px 28px;
-            border-radius: 10px;
-            font-size: 20px;
-            text-decoration: none;
-            color: white;
-            cursor: pointer;
-            transition: 0.2s ease-in-out;
-            user-select: none;
-            display: inline-block;
-        }
+.btn{
+position:absolute;
+bottom:40px;
+right:60px;
 
-        .btn:hover {
-            background: #ff6d26;
-            transform: scale(1.05);
-        }
+background:#1c1f26;
+border:1px solid rgba(255,255,255,0.08);
 
-        /* SIMPLE FLOAT ANIMATION */
-        @keyframes floatTitle {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0px); }
-        }
-    </style>
+padding:14px 28px;
+border-radius:12px;
+
+font-size:17px;
+color:white;
+cursor:pointer;
+transition:0.2s;
+}
+
+.btn:hover{
+background:#ff7a3c;
+transform:translateY(-2px);
+}
+
+/* SCROLL TEXT */
+
+.scroll-down{
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+font-size:20px;
+color:#ffe8d9;
+opacity:0.9;
+}
+
+/* ABOUT */
+
+.about{
+padding:60px 40px;
+text-align:center;
+font-size:20px;
+color:#b8bcc5;
+max-width:900px;
+margin:auto;
+line-height:1.6;
+
+border-top:1px solid rgba(255,255,255,0.05);
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+/* PROJECT SECTION */
+
+.projects{
+padding:70px 40px;
+max-width:1400px;
+margin:auto;
+}
+
+/* GRID */
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+/* CARD */
+
+.card{
+
+background:linear-gradient(
+180deg,
+#1c1f26,
+#181b21
+);
+
+border-radius:16px;
+padding:22px;
+
+border:1px solid rgba(255,255,255,0.06);
+
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border:1px solid rgba(255,255,255,0.12);
+}
+
+/* VIDEO THUMB */
+
+.video-thumb{
+width:100%;
+border-radius:12px;
+cursor:pointer;
+}
+
+/* TITLE */
+
+.card h3{
+margin:14px 0 6px 0;
+font-size:22px;
+transition:0.2s;
+}
+
+.card:hover h3{
+color:#2db27f;
+}
+
+/* DESCRIPTION */
+
+.card p{
+opacity:0.85;
+font-size:15px;
+line-height:1.5;
+margin-bottom:12px;
+}
+
+/* TAGS */
+
+.tags{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+}
+
+.tag{
+background:#262b35;
+color:#c9ced8;
+padding:6px 12px;
+border-radius:20px;
+font-size:13px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.project-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.hero h1{
+font-size:56px;
+}
+
+}
+
+@media(max-width:650px){
+
+.project-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:44px;
+}
+
+.btn{
+right:30px;
+bottom:30px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <div class="hero">
-        <div>
-            <h1>Artistic Scripter</h1>
-            <p>I am a roblox scripter :)</p>
-            <a class="btn" id="copyBtn">📩 Hire Me on Discord</a>
-        </div>
+<!-- HERO -->
 
-        
-    </div>
+<div class="hero">
 
-    <div class="section">
+<h1>Artistic Scripter</h1>
+<p>I am Aditya Poonia, a scripter</p>
 
-        <!-- BIO PARAGRAPH (NEW, STATIC) -->
-        <p style="
-            max-width: 900px;
-            margin: 0 auto 40px auto;
-            font-size: 20px;
-            line-height: 1.6;
-            opacity: 0.9;
-        ">
-            I'm a full stack scripter with 2 years of experience and know everything from
-            datastores, movement systems, guns, vehicles, to complex modular systems and workflows.
-        </p>
+<p class="scroll-down">Please Scroll Down</p>
 
-        <h2>Featured Projects</h2>
+<div class="btn" id="copyBtn">
+📩 Hire Me on Discord
+</div>
 
-        <!-- PROJECT 0 -->
-        <div class="project-card">
-            <h2>Crazy Portals</h2>
-            <p>A Dynamic Portal System for Fast Travel & Player Control</p>
-
-            <iframe class="yt-video"
-                src="https://www.youtube.com/embed/bu9ZQk4u2_k"
-                title="YouTube video player"
-                allowfullscreen>
-            </iframe>
-
-            <ul>
-                <li> Fully Designed Map Environment</li>
-                <li> Real-Time Player Tracking</li>
-                <li> Teleportation to Major Landmarks</li>
-                <li> Bring Players Directly to Headquarters</li>
-                <li> Optimized & Modular Portal System</li>
-            </ul>
-        </div>
+</div>
 
 
-        
-        <!-- PROJECT 1 -->
-        <div class="project-card">
-            <h2>Advanced Movement System</h2>
-            <p>The Ultimate Movement System For Immersive Roblox Experiences</p>
+<!-- ABOUT -->
 
-            <iframe class="yt-video"
-                src="https://www.youtube.com/embed/shrYt7GvRHc"
-                title="YouTube video player"
-                allowfullscreen>
-            </iframe>
+<div class="about">
 
-            <ul>
-                <li> Custom animations & realistic character control</li>
-                <li> Sprint, Dash, Roll & enhanced jump mechanics</li>
-                <li> Shift-Lock and movement customization</li>
-                <li> Material-based footsteps + dynamic VFX/SFX</li>
-                <li> Camera sway & bobbing for realism</li>
-                <li> Integrated anti-cheat for fairness</li>
-            </ul>
-        </div>
+I'm a full stack scripter with about 2 years of experience.  
+Most of my work revolves around gameplay systems like movement, inventories, weapons, quests and other modular systems used in Roblox games.
 
-        <!-- PROJECT 2 -->
-        <div class="project-card">
-            <h2>Advanced Weapons</h2>
-            <p>The Ultimate Weapon System for Top-Notch FPS and Story Games</p>
+</div>
 
-            <iframe class="yt-video"
-                src="https://www.youtube.com/embed/D7QTpVjGCfc"
-                title="YouTube video player"
-                allowfullscreen>
-            </iframe>
+<!-- PROJECTS -->
 
-            <ul>
-                <li> Animations for standing idle + walking for realism</li>
-                <li> Showcased guns: HK33 (Rifle), AK74M (Rifle), Rocket Launcher</li>
-                <li> Pistols, SMGs, Rifles, Snipers, RPGs — everything can be added</li>
-                <li> Modular system + Anti-spam / Anti-cheat</li>
-                <li> Shell ejection for enhanced visuals</li>
-                <li> Custom sounds for reloads, firing, rocket explosions</li>
-                <li> Every small detail polished for immersion</li>
-                <li> Note: Animations self-made. Sounds from toolbox.</li>
-            </ul>
-        </div>
+<div class="projects">
 
-        <!-- PROJECT 3 -->
-        <div class="project-card">
-            <h2>Advanced Inventory System</h2>
-            <p>A Complete Modular Inventory Built for All Game Types</p>
+<div class="project-grid">
 
-            <iframe class="yt-video"
-                src="https://www.youtube.com/embed/0XVhsqOUasI"
-                title="YouTube video player"
-                allowfullscreen>
-            </iframe>
+<!-- PORTALS -->
 
-            <ul>
-                <li> Drag and Drop Inventory Items</li>
-                <li> Advanced UIGridLayout for Perfect Auto-Sorting</li>
-                <li> Smooth Scrollable Inventory Window</li>
-                <li> PickUp, Drop, Equip — All Fully Functional</li>
-                <li> Multiple Categories</li>
-                <li> Multiple Rarities</li>
-                <li> Custom Hover Animations</li>
-            </ul>
-        </div>
+<div class="card">
 
-        <!-- PROJECT 4 -->
-        <div class="project-card">
-            <h2>Advanced Quest System</h2>
-            <p>A Flexible & Scalable Quest System for Story and RPG Games</p>
+<img class="video-thumb"
+src="https://img.youtube.com/vi/bu9ZQk4u2_k/maxresdefault.jpg"
+onclick="window.open('https://youtu.be/aQimFzI7E7A')">
 
-            <iframe class="yt-video"
-                src="https://www.youtube.com/embed/0mZJjCCBw2I"
-                title="YouTube video player"
-                allowfullscreen>
-            </iframe>
+<h3>Portals with Minimap</h3>
 
-            <ul>
-                <li> Modular NPC Dialogue System</li>
-                <li> Real-Time Quest Tracking</li>
-                <li> Reward System</li>
-                <li> And Much Much More</li>
-            </ul>
-        </div>
+<p>
+Teleport players and spawn portals via minimap.
+Made for a "Control Tower/Command Center" scenario.
+</p>
 
-        <h1 style="text-align:center; font-size:50px; margin-top:40px;">🔥 More Coming Soon...</h1>
+<div class="tags">
+<div class="tag">Teleport</div>
+<div class="tag">Map Travel</div>
+<div class="tag">UI</div>
+</div>
 
-    </div>
+</div>
 
-    <script>
-        document.getElementById("copyBtn").addEventListener("click", function () {
-            navigator.clipboard.writeText("tastyrasmalai_08183");
-            window.location.href = "discord://";
-            alert("Discord Copied! Open Discord and paste to DM: tastyrasmalai_08183");
-        });
-    </script>
+<!-- WEAPONS -->
+
+<div class="card">
+
+<img class="video-thumb"
+src="https://img.youtube.com/vi/D7QTpVjGCfc/maxresdefault.jpg"
+onclick="window.open('https://youtu.be/jmvcF2x7EpU')">
+
+<h3>Guns & RPG</h3>
+
+<p>
+Modular gun system supporting rifles, pistols and rocket launchers.
+Includes animations, shell ejection and sound effects.
+</p>
+
+<div class="tags">
+<div class="tag">FPS</div>
+<div class="tag">Weapons</div>
+<div class="tag">Effects</div>
+</div>
+
+</div>
+<!-- INVENTORY -->
+
+<div class="card">
+
+<img class="video-thumb"
+src="https://img.youtube.com/vi/0XVhsqOUasI/maxresdefault.jpg"
+onclick="window.open('https://youtu.be/LnkxPuOG6FU')">
+
+<h3>Drag And Drop Inventory</h3>
+
+<p>
+Drag and drop inventory with item categories and rarities.
+Players can pick up, equip or drop items.
+</p>
+
+<div class="tags">
+<div class="tag">Inventory</div>
+<div class="tag">UI</div>
+<div class="tag">Drag & Drop</div>
+</div>
+
+</div>
+
+<!-- QUESTS -->
+
+<div class="card">
+
+<img class="video-thumb"
+src="https://img.youtube.com/vi/0mZJjCCBw2I/maxresdefault.jpg"
+onclick="window.open('https://youtu.be/4ivF4flTXv4')">
+
+<h3>Quest System</h3>
+
+<p>
+Quest framework with NPC dialogue and reward handling.
+Useful for story or RPG style games.
+</p>
+
+<div class="tags">
+<div class="tag">Quests</div>
+<div class="tag">NPC</div>
+<div class="tag">Rewards</div>
+</div>
+
+</div>
+
+<!-- MOVEMENT -->
+
+<div class="card">
+
+<img class="video-thumb"
+src="https://img.youtube.com/vi/shrYt7GvRHc/maxresdefault.jpg"
+onclick="window.open('https://youtu.be/a_T9GzPq4qY')">
+
+<h3>Custom Movement System</h3>
+
+<p>
+Custom character movement with sprinting, dashing and rolling.
+Made to make player movement feel smoother.
+</p>
+
+<div class="tags">
+<div class="tag">Movement</div>
+<div class="tag">Animations</div>
+<div class="tag">Camera</div>
+</div>
+
+</div>
+
+<!-- Stylish Inventory -->
+
+<div class="card">
+
+<img class="video-thumb"
+src="https://img.youtube.com/vi/shrYt7GvRHc/maxresdefault.jpg"
+onclick="window.open('https://youtu.be/c5Z3zXMulmM')">
+
+<h3>Stylish Inventory</h3>
+
+<p>
+Stylish modern-ish Inventory, this one has gamepass to unlock more slots.
+</p>
+
+<div class="tags">
+<div class="tag">Gamepass</div>
+<div class="tag">Monetization</div>
+<div class="tag">Inventory</div>
+</div>
+
+</div>
+
+<!-- Search Bar Inventory -->
+
+<div class="card">
+
+<img class="video-thumb"
+src="https://img.youtube.com/vi/shrYt7GvRHc/maxresdefault.jpg"
+onclick="window.open('https://youtu.be/fS03bY7q9nw')">
+
+<h3>Search Bar Inventory</h3>
+
+<p>
+Search Bar, a very uncommon feature on roblox, well I've got that covered.
+</p>
+
+<div class="tags">
+<div class="tag">Search Bar</div>
+<div class="tag">Monetization</div>
+<div class="tag">Inventory</div>
+</div>
+
+</div>
+
+
+
+
+</div>
+</div>
+
+<script>
+
+document.getElementById("copyBtn").addEventListener("click",function(){
+
+navigator.clipboard.writeText("tastyrasmalai_08183");
+
+alert("Discord copied! Add: tastyrasmalai_08183");
+
+});
+
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
-
