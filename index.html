@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Artistic Scripter</title>
-
 <style>
+
+*{box-sizing:border-box;}
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 background:#254a3c;
 color:white;
 }
@@ -27,23 +26,21 @@ justify-content:center;
 align-items:center;
 position:relative;
 text-align:center;
-padding:40px;
+padding:40px 24px 100px;
 }
 
 .hero h1{
-font-size:72px;
+font-size:clamp(36px,8vw,72px);
 margin:0;
 letter-spacing:-1px;
 animation:floatTitle 4s ease-in-out infinite;
 }
 
 .hero p{
-font-size:22px;
+font-size:clamp(16px,3vw,22px);
 margin-top:10px;
 color:#ffe8d9;
 }
-
-/* FLOAT ANIMATION */
 
 @keyframes floatTitle{
 0%{transform:translateY(0)}
@@ -51,31 +48,26 @@ color:#ffe8d9;
 100%{transform:translateY(0)}
 }
 
-/* HIRE BUTTON */
-
 .btn{
 position:absolute;
 bottom:40px;
-right:60px;
-
+right:clamp(20px,5vw,60px);
 background:#1c1f26;
 border:1px solid rgba(255,255,255,0.08);
-
 padding:14px 28px;
 border-radius:12px;
-
-font-size:17px;
+font-size:clamp(14px,3vw,17px);
 color:white;
 cursor:pointer;
 transition:0.2s;
+text-decoration:none;
+display:inline-block;
 }
 
 .btn:hover{
 background:#ff7a3c;
 transform:translateY(-2px);
 }
-
-/* SCROLL TEXT */
 
 .scroll-down{
 position:absolute;
@@ -85,62 +77,60 @@ transform:translateX(-50%);
 font-size:20px;
 color:#ffe8d9;
 opacity:0.9;
+white-space:nowrap;
 }
 
 /* ABOUT */
 
 .about{
-padding:60px 40px;
+padding:60px 24px;
 text-align:center;
-font-size:20px;
+font-size:clamp(16px,2.5vw,20px);
 color:#b8bcc5;
 max-width:900px;
 margin:auto;
 line-height:1.6;
-
 border-top:1px solid rgba(255,255,255,0.05);
 border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
-/* COUPON SECTION */
+/* COUPON */
 
 .coupon-section{
 max-width:900px;
-margin:70px auto 30px auto;
+margin:70px auto 30px;
 text-align:center;
-padding:0 40px;
+padding:0 24px;
 }
 
 .coupon-title{
-font-size:36px;
+font-size:clamp(24px,5vw,36px);
 font-weight:700;
 color:#f7c96d;
 }
 
 .coupon-divider{
-width:360px;
+width:min(360px,80%);
 height:3px;
 background:#f7c96d;
-margin:16px auto 22px auto;
+margin:16px auto 22px;
 border-radius:3px;
 opacity:0.9;
 }
 
 .coupon-desc{
-font-size:19px;
+font-size:clamp(15px,2.5vw,19px);
 color:#cfd4db;
 line-height:1.6;
 }
 
-/* PROJECT SECTION */
+/* PROJECTS */
 
 .projects{
-padding:70px 40px;
+padding:70px 24px;
 max-width:1400px;
 margin:auto;
 }
-
-/* GRID */
 
 .project-grid{
 display:grid;
@@ -151,18 +141,10 @@ gap:30px;
 /* CARD */
 
 .card{
-
-background:linear-gradient(
-180deg,
-#1c1f26,
-#181b21
-);
-
+background:linear-gradient(180deg,#1c1f26,#181b21);
 border-radius:16px;
 padding:22px;
-
 border:1px solid rgba(255,255,255,0.06);
-
 transition:0.25s;
 }
 
@@ -171,36 +153,40 @@ transform:translateY(-6px);
 border:1px solid rgba(255,255,255,0.12);
 }
 
-/* VIDEO THUMB */
+/* VIDEO EMBED */
 
-.video-thumb{
+.video-wrap{
+position:relative;
 width:100%;
+padding-top:56.25%;
 border-radius:12px;
-cursor:pointer;
+overflow:hidden;
+}
+
+.video-wrap iframe{
+position:absolute;
+top:0;left:0;
+width:100%;height:100%;
+border:none;
+border-radius:12px;
 }
 
 /* TITLE */
 
 .card h3{
-margin:14px 0 6px 0;
-font-size:22px;
+margin:14px 0 6px;
+font-size:clamp(18px,3vw,22px);
 transition:0.2s;
 }
 
-.card:hover h3{
-color:#2db27f;
-}
-
-/* DESCRIPTION */
+.card:hover h3{color:#2db27f;}
 
 .card p{
 opacity:0.85;
-font-size:15px;
+font-size:clamp(13px,2vw,15px);
 line-height:1.5;
 margin-bottom:12px;
 }
-
-/* TAGS */
 
 .tags{
 display:flex;
@@ -219,257 +205,152 @@ font-size:13px;
 /* RESPONSIVE */
 
 @media(max-width:1000px){
-
-.project-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.hero h1{
-font-size:56px;
-}
-
+.project-grid{grid-template-columns:repeat(2,1fr);}
 }
 
 @media(max-width:650px){
+.project-grid{grid-template-columns:1fr;}
 
-.project-grid{
-grid-template-columns:1fr;
-}
-
-.hero h1{
-font-size:44px;
-}
+.hero{min-height:360px;padding-bottom:120px;}
 
 .btn{
-right:30px;
+right:50%;
+transform:translateX(50%);
 bottom:30px;
+width:calc(100% - 48px);
+text-align:center;
 }
 
+.scroll-down{
+bottom:80px;
+}
 }
 
 </style>
-
 </head>
-
 <body>
 
-<!-- HERO -->
-
 <div class="hero">
-
-<h1>Artistic Scripter</h1>
-<p>Hi, I am Aditya Poonia</p>
-
-<p class="scroll-down">Please Scroll Down</p>
-
-<div class="btn" onclick="window.open('https://discord.com/users/1304461442875002990','_blank')">
-📩 Hire Me on Discord
+  <h1>Artistic Scripter</h1>
+  <p>Hi, I am Aditya Poonia</p>
+  <p class="scroll-down">Please Scroll Down</p>
+  <a class="btn" href="https://discord.com/users/1304461442875002990" target="_blank">
+    📩 Hire Me on Discord
+  </a>
 </div>
-
-</div>
-
-<!-- ABOUT -->
 
 <div class="about">
-
-I'm a full stack scripter with about 2 years of experience.
-Most of my work revolves around gameplay systems like movement, inventories, weapons, quests and other modular systems used in Roblox games.
-
+  I'm a full stack scripter with about 2 years of experience.
+  Most of my work revolves around gameplay systems like movement, inventories, weapons, quests and other modular systems used in Roblox games.
 </div>
-
-<!-- COUPON SECTION -->
 
 <div class="coupon-section">
-
-<div class="coupon-title">
-🎟 Free Fix Coupon 🎟
+  <div class="coupon-title">🎟 Free Fix Coupon 🎟</div>
+  <div class="coupon-divider"></div>
+  <div class="coupon-desc">
+    If me and you complete a successful commission, you get a coupon from me.
+    The coupon allows you to come to me, and I will fix the bug(s) in the game for FREE,
+    the bug can be in someone else's script, the coupon covers that too, it just has to be your game.
+    The coupon offers a maximum of 5 bugs, and a 1-year validity starting from the day when the coupon was issued to you.
+  </div>
 </div>
-
-<div class="coupon-divider"></div>
-
-<div class="coupon-desc">
-If me and you complete a successful commission, you get a coupon from me.
-The coupon allows you to come to me, and I will fix the bug(s) in the game for FREE,
-the bug can be in someone else's script, the coupon covers that too, it just has to be your game.
-The coupon offers a maximum of 5 bugs, and a 1-year validity starting from the day when the coupon was issued to you.
-</div>
-
-</div>
-
-<!-- PROJECTS -->
 
 <div class="projects">
+  <div class="project-grid">
 
-<div class="project-grid">
+    <div class="card">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/aQimFzI7E7A?autoplay=1&mute=1&loop=1&playlist=aQimFzI7E7A" allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <h3>Portals with Minimap</h3>
+      <p>Teleport players and spawn portals via minimap. Made for a "Control Tower/Command Center" scenario.</p>
+      <div class="tags">
+        <div class="tag">Teleport</div>
+        <div class="tag">Map Travel</div>
+        <div class="tag">UI</div>
+      </div>
+    </div>
 
-<!-- PORTALS -->
+    <div class="card">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/jmvcF2x7EpU?autoplay=1&mute=1&loop=1&playlist=jmvcF2x7EpU" allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <h3>Guns &amp; RPG</h3>
+      <p>Modular gun system supporting rifles, pistols and rocket launchers. Includes animations, shell ejection and sound effects.</p>
+      <div class="tags">
+        <div class="tag">FPS</div>
+        <div class="tag">Weapons</div>
+        <div class="tag">Effects</div>
+      </div>
+    </div>
 
-<div class="card">
+    <div class="card">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/M2r7jJg1dmk?autoplay=1&mute=1&loop=1&playlist=M2r7jJg1dmk" allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <h3>Drag And Drop Inventory</h3>
+      <p>Drag and drop inventory with item categories and rarities. Players can pick up, equip or drop items.</p>
+      <div class="tags">
+        <div class="tag">Inventory</div>
+        <div class="tag">UI</div>
+        <div class="tag">Drag &amp; Drop</div>
+      </div>
+    </div>
 
-<img class="video-thumb"
-src="https://img.youtube.com/vi/aQimFzI7E7A/hqdefault.jpg"
-onclick="window.open('https://www.youtube.com/watch?v=aQimFzI7E7A')">
+    <div class="card">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/4ivF4flTXv4?autoplay=1&mute=1&loop=1&playlist=4ivF4flTXv4" allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <h3>Quest System</h3>
+      <p>Quest framework with NPC dialogue and reward handling. Useful for story or RPG style games.</p>
+      <div class="tags">
+        <div class="tag">Quests</div>
+        <div class="tag">NPC</div>
+        <div class="tag">Rewards</div>
+      </div>
+    </div>
 
-<h3>Portals with Minimap</h3>
+    <div class="card">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/a_T9GzPq4qY?autoplay=1&mute=1&loop=1&playlist=a_T9GzPq4qY" allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <h3>Custom Movement System</h3>
+      <p>Custom character movement with sprinting, dashing and rolling. Made to make player movement feel smoother.</p>
+      <div class="tags">
+        <div class="tag">Movement</div>
+        <div class="tag">Animations</div>
+        <div class="tag">Camera</div>
+      </div>
+    </div>
 
-<p>
-Teleport players and spawn portals via minimap.
-Made for a "Control Tower/Command Center" scenario.
-</p>
+    <div class="card">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/c5Z3zXMulmM?autoplay=1&mute=1&loop=1&playlist=c5Z3zXMulmM" allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <h3>Stylish Inventory</h3>
+      <p>Stylish modern-ish Inventory, this one has gamepass to unlock more slots.</p>
+      <div class="tags">
+        <div class="tag">Gamepass</div>
+        <div class="tag">Monetization</div>
+        <div class="tag">Inventory</div>
+      </div>
+    </div>
 
-<div class="tags">
-<div class="tag">Teleport</div>
-<div class="tag">Map Travel</div>
-<div class="tag">UI</div>
+    <div class="card">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/fS03bY7q9nw?autoplay=1&mute=1&loop=1&playlist=fS03bY7q9nw" allowfullscreen allow="autoplay"></iframe>
+      </div>
+      <h3>Search Bar Inventory</h3>
+      <p>Search Bar, a very uncommon feature on Roblox, well I've got that covered.</p>
+      <div class="tags">
+        <div class="tag">Search Bar</div>
+        <div class="tag">Monetization</div>
+        <div class="tag">Inventory</div>
+      </div>
+    </div>
+
+  </div>
 </div>
-
-</div>
-
-<!-- WEAPONS -->
-
-<div class="card">
-
-<img class="video-thumb"
-src="https://img.youtube.com/vi/jmvcF2x7EpU/hqdefault.jpg"
-onclick="window.open('https://www.youtube.com/watch?v=jmvcF2x7EpU')">
-
-<h3>Guns & RPG</h3>
-
-<p>
-Modular gun system supporting rifles, pistols and rocket launchers.
-Includes animations, shell ejection and sound effects.
-</p>
-
-<div class="tags">
-<div class="tag">FPS</div>
-<div class="tag">Weapons</div>
-<div class="tag">Effects</div>
-</div>
-
-</div>
-
-<!-- INVENTORY -->
-
-<div class="card">
-
-<img class="video-thumb"
-src="https://img.youtube.com/vi/M2r7jJg1dmk/hqdefault.jpg"
-onclick="window.open('https://www.youtube.com/watch?v=M2r7jJg1dmk')">
-
-<h3>Drag And Drop Inventory</h3>
-
-<p>
-Drag and drop inventory with item categories and rarities.
-Players can pick up, equip or drop items.
-</p>
-
-<div class="tags">
-<div class="tag">Inventory</div>
-<div class="tag">UI</div>
-<div class="tag">Drag & Drop</div>
-</div>
-
-</div>
-
-<!-- QUESTS -->
-
-<div class="card">
-
-<img class="video-thumb"
-src="https://img.youtube.com/vi/4ivF4flTXv4/hqdefault.jpg"
-onclick="window.open('https://www.youtube.com/watch?v=4ivF4flTXv4')">
-
-<h3>Quest System</h3>
-
-<p>
-Quest framework with NPC dialogue and reward handling.
-Useful for story or RPG style games.
-</p>
-
-<div class="tags">
-<div class="tag">Quests</div>
-<div class="tag">NPC</div>
-<div class="tag">Rewards</div>
-</div>
-
-</div>
-
-<!-- MOVEMENT -->
-
-<div class="card">
-
-<img class="video-thumb"
-src="https://img.youtube.com/vi/a_T9GzPq4qY/hqdefault.jpg"
-onclick="window.open('https://www.youtube.com/watch?v=a_T9GzPq4qY')">
-
-<h3>Custom Movement System</h3>
-
-<p>
-Custom character movement with sprinting, dashing and rolling.
-Made to make player movement feel smoother.
-</p>
-
-<div class="tags">
-<div class="tag">Movement</div>
-<div class="tag">Animations</div>
-<div class="tag">Camera</div>
-</div>
-
-</div>
-
-<!-- Stylish Inventory -->
-
-<div class="card">
-
-<img class="video-thumb"
-src="https://img.youtube.com/vi/c5Z3zXMulmM/hqdefault.jpg"
-onclick="window.open('https://www.youtube.com/watch?v=c5Z3zXMulmM')">
-
-<h3>Stylish Inventory</h3>
-
-<p>
-Stylish modern-ish Inventory, this one has gamepass to unlock more slots.
-</p>
-
-<div class="tags">
-<div class="tag">Gamepass</div>
-<div class="tag">Monetization</div>
-<div class="tag">Inventory</div>
-</div>
-
-</div>
-
-<!-- Search Bar Inventory -->
-
-<div class="card">
-
-<img class="video-thumb"
-src="https://img.youtube.com/vi/fS03bY7q9nw/hqdefault.jpg"
-onclick="window.open('https://www.youtube.com/watch?v=fS03bY7q9nw')">
-
-<h3>Search Bar Inventory</h3>
-
-<p>
-Search Bar, a very uncommon feature on roblox, well I've got that covered.
-</p>
-
-<div class="tags">
-<div class="tag">Search Bar</div>
-<div class="tag">Monetization</div>
-<div class="tag">Inventory</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-<script>
-
-</script>
 
 </body>
 </html>
-
-
-
